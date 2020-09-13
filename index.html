@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <title>Rock, Paper, Scissors</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="row">
+                <img src="img/logo.svg" class="logo">
+                <div class="score bg-white text-center">
+                        <small class="score-heading font-weight-bold">SCORE</small>
+                        <h2 class="score-count text-secondary" id="score-board">12</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div id="main">
+            <img src="img/bg-triangle.svg" class="triangle" id="triangle">
+            <div>
+                <button type="button"class="btn paper bg-white p-1" onclick="paper()"><img src="img/icon-paper.svg"></button>
+            </div>
+            <div>
+                <button type="button" class="btn scissors bg-white p-1" onclick="scissors()"><img src="img/icon-scissors.svg"></button>
+            </div>
+            <div>
+                <button type="button" class="btn rock bg-white p-1"onclick="rock()"><img src="img/icon-rock.svg"></button>
+            </div>
+            <button type="button" class="btn btn-outline rules text-white mb-5" data-toggle="modal" data-target="#rule">RULES</button>
+        </div>
+         <!--Modal-->
+         <div class="modal fade" id="rule">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">RULES</h4>
+                  <button class="close" data-dismiss="modal"><img src="img/icon-close.svg"></button>
+                </div>
+                <div class="modal-body text-center">
+                  <img src="img/image-rules.svg" class="rule-img img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+    </div>
+
+    <div class="container" id="picked">
+        <div class="row   play-pick" >
+            <div id="player" ></div>
+            <div id="result" class="m-lg-5"></div>
+            <div id="computer" ></div>
+        </div>
+        <button type="button" class="btn btn-outline rules text-white mb-5" data-toggle="modal" data-target="#rule">RULES</button>
+
+        <!--Modal-->
+        <div class="modal fade" id="rule">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">RULES</h4>
+                  <button class="close" data-dismiss="modal"><img src="img/icon-close.svg"></button>
+                </div>
+                <div class="modal-body text-center">
+                  <img src="img/image-rules.svg" class="rule-img img-fluid">
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function(){});
+        var hand = ["rock","paper","scissors"];
+        var score=document.getElementById("score-board"),count=12;
+        function rock() {
+            document.getElementById("main").style.display="none"; 
+            document.getElementById("picked").style.display="block"; 
+          $("#player").html("<h6 class='text-white text-uppercase text-center mt-5 text-pick'>You picked</h6><img src='img/icon-rock.svg' class='picked-rock img-fluid bg-white ml-3'>");
+          rockPaperScissors();
+        }
+        function paper() {
+            document.getElementById("main").style.display="none"; 
+            document.getElementById("picked").style.display="block"; 
+          $("#player").html("<h6 class='text-white text-uppercase text-center mt-5 text-pick'>You picked</h6><img src='img/icon-paper.svg' class='picked-paper bg-white ml-3'>");
+          rockPaperScissors();
+        }
+        function scissors() {
+            document.getElementById("main").style.display="none"; 
+            document.getElementById("picked").style.display="block"; 
+          $("#player").html("<h6 class='text-white text-uppercase text-center mt-5 text-pick'>You picked</h6><img src='img/icon-scissors.svg'  class='picked-scissors bg-white ml-3'>");
+          rockPaperScissors();
+        }
+        function rockPaperScissors() {
+          var symbol = arguments.callee.caller.name;
+          var cpuSymbol = hand[Math.floor(Math.random() * 3)];
+          switch(cpuSymbol) {
+            case "rock":
+              $("#computer").html("<h6 class='text-white text-center text-uppercase mt-5 text-pick'>House picked</h6><img src='img/icon-rock.svg' class='picked-rock img-fluid bg-white ml-4'>");
+              console.log(symbol == "scissors" ? denoteLoser() : symbol == "paper" ? denoteWinner() : denoteDraw());
+              break;
+            case "paper":
+              $("#computer").html("<h6 class='text-white text-center text-uppercase mt-5 text-pick'>House picked</h6><img src='img/icon-paper.svg' class='picked-paper bg-white' class='picked-scissors bg-white ml-4'>");
+              console.log(symbol == "rock" ? denoteLoser() : symbol == "scissors" ? denoteWinner() : denoteDraw())
+              break;
+            case "scissors":
+              $("#computer").html("<h6 class='text-white text-center text-uppercase mt-5 text-pick'>House picked</h6><img src='img/icon-scissors.svg' class='picked-scissors bg-white ml-4'>");
+              console.log(symbol == "paper" ? denoteLoser() : symbol == "rock" ? denoteWinner() : denoteDraw())
+              break;
+          }
+        }
+        function denoteWinner() {
+          $("#result").html("<h1 class='text-white predict '>You Win</h1><button class='btn btn-outline predictbtn bg-white text-danger' onclick='show()'>Play again</button>");
+          count=count+1;
+          score.innerHTML=count;
+        }
+        function denoteLoser() {
+          $("#result").html("<h1 class='text-white predict'>You Lose</h1><button class='btn btn-outline predictbtn bg-white text-danger' onclick='show()'>Play again</button>");
+          count=count-1;
+          score.innerHTML=count;
+        }
+        function denoteDraw() {
+          $("#result").html("<h1 class='text-white predict'>You Draw</h1><button class='btn btn-outline  predictbtn bg-white text-danger' onclick='show()'>Play again</button>")
+      }
+      function show(){
+        document.getElementById("main").style.display="block"; 
+        document.getElementById("picked").style.display="none"; 
+      }
+      </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

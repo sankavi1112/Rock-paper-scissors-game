@@ -1,0 +1,443 @@
+.container{
+    background-image: radial-gradient(circle at top center,#4a6088,#1d356b,#14315a,#021736);
+    padding-top: 50px;
+}
+.header{
+    border:3px solid hsl(217, 16%, 45%);
+    border-radius: 10px;
+    margin-left:200px;
+    margin-right: 200px;
+    padding:20px;
+}
+.logo{
+    width:150px;height:80px;
+    margin-left:30px;
+}
+.score-heading{
+    color: hsl(229, 64%, 46%);
+}
+.score{
+    margin-left: 400px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding:5px 30px;
+}
+.score-count{
+    font-size: 40px;
+}
+.triangle{
+    margin-top:100px;
+    margin-left: 400px;
+}
+.paper{
+    border:15px solid transparent;
+    border-radius:100%;
+    position: absolute;
+    top: 15rem;
+    background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(230, 89%, 65%),hsl(230, 89%, 62%));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    width: 150px;
+    height: 150px;
+    margin-left: 370px;
+}
+.scissors{
+    border:15px solid transparent;
+    border-radius:100%;
+    position: absolute;
+    top: 15rem;
+    margin-left: 600px;
+    background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(40, 84%, 53%),hsl(39, 89%, 49%));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    width: 150px;
+    height: 150px;
+}
+.rock{
+    border:15px solid transparent;
+    border-radius:100%;
+    position: absolute;
+    top: 27rem;
+    margin-left: 480px;
+    background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(349, 70%, 56%),hsl(349, 71%, 52%));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    width: 150px;
+    height: 150px;
+}
+.rules{
+    border: 1px solid white;
+    margin-left: 1000px;
+}
+#rule{
+    margin-top: 150px;
+}
+.picked-paper{
+    border:20px solid hsl(230, 89%, 65%);
+    border-radius:100%;
+    position: absolute;
+   padding:30px;
+}
+.picked-scissors{
+    border:20px solid hsl(40, 84%, 53%);
+    border-radius:100%;
+    position: absolute;
+   padding:30px;
+}
+.picked-rock{
+    border:20px solid hsl(349, 70%, 56%);
+    border-radius:100%;
+    position: absolute;
+   padding:30px;
+}
+.play-pick{
+    margin-bottom: 150px;
+    justify-content: center;
+}
+.predict{
+    margin-left:20px;
+}
+.predictbtn{
+    margin-left: 60px;
+}
+.text-pick{
+    margin-left:40px;
+}
+#picked{
+    display: none;
+}
+
+@media only screen and (max-width: 1040px) {
+    .header{
+        border:2px solid hsl(217, 16%, 45%);
+        border-radius: 5px;
+        padding-left:20px;
+        margin-right:10px;margin:5px;
+        margin-bottom: 0px;
+        margin-left: 10px;
+        
+    }
+    .logo{
+        width:150px;height:70px;
+        margin:20px;
+    }
+    .score-heading{
+        color: hsl(229, 64%, 46%);
+    }
+    .score{
+        border: 1px solid white;
+        border-radius: 5px;
+        margin:10px;
+        padding:5px 10px;
+        margin-left:350px;
+    }
+    .score-count{
+        font-size: 30px;
+    }
+    .triangle{
+        margin-top:80px;
+        margin-left: 40px;
+        width:250px;
+        height:270px;
+    }
+    .paper{
+        border:5px solid transparent;
+        border-radius:100%;
+        position: absolute;
+        top: 14rem;
+        background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(230, 89%, 65%),hsl(230, 89%, 62%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+    }
+    .scissors{
+        border:5px solid transparent;
+        border-radius:100%;
+        position: absolute;
+        top: 14rem;
+        margin-left: 220px;
+        background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(40, 84%, 53%),hsl(39, 89%, 49%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        width: 100px;
+        height: 100px;
+    }
+    .rock{
+        border:5px solid transparent;
+        border-radius:100%;
+        position: absolute;
+        top: 28rem;
+        margin-left:120px;
+        background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(349, 70%, 56%),hsl(349, 71%, 52%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        width: 100px;
+        height: 100px;
+    }
+    .rules{
+        border: 1px solid white;
+        margin-left: 600px;
+        margin-top:30px;
+    }
+    #rule{
+        margin-top: 200px;
+    }
+    .picked-paper{
+        border:7px solid hsl(230, 89%, 65%);
+        border-radius:100%;
+        position: absolute;
+       padding:10px;
+    }
+    .picked-scissors{
+        border:7px solid hsl(40, 84%, 53%);
+        border-radius:100%;
+        position: absolute;
+       padding:10px;
+    }
+    .picked-rock{
+        border:7px solid hsl(349, 70%, 56%);
+        border-radius:100%;
+        position: absolute;
+       padding:10px;
+    }
+    .play-pick{
+        margin-bottom: 100px;
+        justify-content: center;
+    }
+    .predict{
+        font-size:20px;
+        margin-top:40px;
+    }
+    .predictbtn{
+        margin-left:20px;
+    }
+    .text-pick{
+        margin-left:10px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .header{
+        border:2px solid hsl(217, 16%, 45%);
+        border-radius: 5px;
+        margin:5px;
+        margin-bottom: 0px;
+        margin-left:30px;
+        padding-left:20px;
+    }
+    .logo{
+        width:100px;height:50px;
+        margin:20px;
+    }
+    .score-heading{
+        color: hsl(229, 64%, 46%);
+    }
+    .score{
+        border: 1px solid white;
+        border-radius: 5px;
+        margin:10px;
+        margin-left: 50px;
+        padding:5px 10px;
+    }
+    .score-count{
+        font-size: 30px;
+    }
+    .triangle{
+        margin-top:80px;
+        margin-left: 40px;
+        width:250px;
+        height:270px;
+    }
+    .paper{
+        border:5px solid transparent;
+        border-radius:100%;
+        position: absolute;
+        top: 14rem;
+        background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(230, 89%, 65%),hsl(230, 89%, 62%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+    }
+    .scissors{
+        border:5px solid transparent;
+        border-radius:100%;
+        position: absolute;
+        top: 14rem;
+        margin-left: 220px;
+        background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(40, 84%, 53%),hsl(39, 89%, 49%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        width: 100px;
+        height: 100px;
+    }
+    .rock{
+        border:5px solid transparent;
+        border-radius:100%;
+        position: absolute;
+        top: 28rem;
+        margin-left:120px;
+        background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(349, 70%, 56%),hsl(349, 71%, 52%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        width: 100px;
+        height: 100px;
+    }
+    .rules{
+        border: 1px solid white;
+        margin-left: 130px;
+        margin-top:30px;
+    }
+    #rule{
+        margin-top: 200px;
+    }
+    .picked-paper{
+        border:7px solid hsl(230, 89%, 65%);
+        border-radius:100%;
+        position: absolute;
+       padding:10px;
+    }
+    .picked-scissors{
+        border:7px solid hsl(40, 84%, 53%);
+        border-radius:100%;
+        position: absolute;
+       padding:10px;
+    }
+    .picked-rock{
+        border:7px solid hsl(349, 70%, 56%);
+        border-radius:100%;
+        position: absolute;
+       padding:10px;
+    }
+    .play-pick{
+        margin-bottom: 40px;
+    }
+    .predict{
+        font-size:20px;
+        margin-top:200px;
+    }
+    .predictbtn{
+        margin-left:20px;
+    }
+    .text-pick{
+        margin-left:10px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .header{
+        border:2px solid hsl(217, 16%, 45%);
+        border-radius: 5px;
+        margin:2px;
+        margin-bottom: 0px;
+        margin-left:30px;
+        padding-left:5x;
+    }
+    .logo{
+        width:100px;height:50px;
+        margin:5px;
+    }
+    .score-heading{
+        color: hsl(229, 64%, 46%);
+    }
+    .score{
+        border: 1px solid white;
+        border-radius: 5px;
+        margin:10px;
+        margin-left: 10px;
+        padding:5px 10px;
+    }
+    .score-count{
+        font-size: 20px;
+    }
+    .triangle{
+        margin-top:80px;
+        margin-left: 30px;
+        width:200px;
+        height:220px;
+    }
+    .paper{
+        border:5px solid transparent;
+        border-radius:100%;
+        position: absolute;
+        top: 14rem;
+        background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(230, 89%, 65%),hsl(230, 89%, 62%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        width: 100px;
+        height: 100px;
+        margin-left: 5px;
+    }
+    .scissors{
+        border:5px solid transparent;
+        border-radius:100%;
+        position: absolute;
+        top: 14rem;
+        margin-left: 160px;
+        background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(40, 84%, 53%),hsl(39, 89%, 49%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        width: 100px;
+        height: 100px;
+    }
+    .rock{
+        border:5px solid transparent;
+        border-radius:100%;
+        position: absolute;
+        top: 26rem;
+        margin-left:80px;
+        background-image: linear-gradient(white, white), radial-gradient(circle at bottom,hsl(349, 70%, 56%),hsl(349, 71%, 52%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        width: 100px;
+        height: 100px;
+    }
+    .rules{
+        border: 1px solid white;
+        margin-left: 100px;
+        margin-top:50px;
+    }
+    #rule{
+        margin-top: 150px;
+    }
+    .picked-paper{
+        border:5px solid hsl(230, 89%, 65%);
+        border-radius:100%;
+        position: absolute;
+       padding:5px;
+       z-index:10;
+    }
+    .picked-scissors{
+        border:5px solid hsl(40, 84%, 53%);
+        border-radius:100%;
+        position: absolute;
+       padding:5px;
+       z-index:10;
+    }
+    .picked-rock{
+        border:5px solid hsl(349, 70%, 56%);
+        border-radius:100%;
+        position: absolute;
+       padding:5px;
+       z-index:10;
+    }
+    .play-pick{
+        margin-bottom: 40px;
+    }
+    .predict{
+        font-size:20px;
+        margin-top:200px;
+        z-index:8px;
+    }
+    .predictbtn{
+        margin-left:5px;
+        z-index:8px;
+    }
+    .text-pick{
+        margin-left:10px;
+        font-size: 10px;
+    }
+}
